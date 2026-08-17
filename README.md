@@ -6,6 +6,10 @@ A modern cryptocurrency tracking and marketplace application built with React. C
 
 This project was developed following the tutorial: [React Crypto Tracker Tutorial](https://youtu.be/jZFaMEqEqEQ)
 
+## 🌐 Live Demo
+
+Check out the live version of CryptoCheck: [https://rt-crypto-check.netlify.app/](https://rt-crypto-check.netlify.app/)
+
 ## Features
 
 - 🪙 **Browse Cryptocurrencies** - Explore a comprehensive list of cryptocurrencies with real-time pricing data
@@ -26,6 +30,8 @@ This project was developed following the tutorial: [React Crypto Tracker Tutoria
 - **Styling**: CSS3 (with Flexbox & Grid)
 - **Font**: Google Fonts (Outfit)
 - **ESLint**: Code quality and consistency
+- **API**: [CoinGecko API](https://www.coingecko.com/api) - For real-time cryptocurrency data
+- **Hosting**: Netlify
 
 ## Getting Started
 
@@ -115,12 +121,13 @@ src/
 
 ## Future Enhancements
 
-- [ ] Integrate Binance API for real-time data instead of mock data
+- [ ] Migrate to Binance API for additional market data
 - [ ] Add watchlist/favorites feature
 - [ ] Implement user authentication
 - [ ] Add price alerts and notifications
 - [ ] Support for more currency pairs
 - [ ] Advanced charting with multiple indicators
+- [ ] Dark/Light theme toggle
 
 ## Contributing
 
