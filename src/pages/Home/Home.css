@@ -14,8 +14,10 @@
 }
 
 .hero h1 {
-  font-size: max(4vw, 36px);
+  font-size: max(3.5vw, 36px);
 }
+
+/* @media (max-width: 760px) { */
 
 .hero p {
   width: 75%;
