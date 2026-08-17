@@ -37,23 +37,23 @@ const Navbar = () => {
       <Link to={"/"}>
         <img src={logo} alt="" className="logo" />
       </Link>
-      <ul>
+      {/* <ul>
         <Link to={"/"}>
           <li>Home</li>
         </Link>
         <li>Features</li>
         <li>Pricing</li>
         <li>Blog</li>
-      </ul>
+      </ul> */}
       <div className="nav-right">
         <select onChange={currencyHandler}>
           <option value="usd">USD</option>
           <option value="eur">EUR</option>
           <option value="inr">INR</option>
         </select>
-        <button>
+        {/* <button>
           Sign Up <img src={arrow_icon} alt="" />
-        </button>
+        </button> */}
       </div>
     </div>
   );

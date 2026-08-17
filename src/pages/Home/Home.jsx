@@ -7,22 +7,50 @@ const Home = () => {
   const { allCoin, currency } = useContext(CoinContext);
   const [displayCoin, setDisplayCoin] = useState([]);
   const [input, setInput] = useState("");
+  const [showSuggestions, setShowSuggestions] = useState(false);
+  const [suggestions, setSuggestions] = useState([]);
 
   const inputHandler = (event) => {
-    setInput(event.target.value);
-    if (event.target.value === "") {
-      setDisplayCoin(allCoin);
+    const value = event.target.value;
+    setInput(value);
+
+    if (showSuggestions) {
+      if (value === "") {
+        setSuggestions(allCoin);
+      } else {
+        const filtered = allCoin.filter((item) =>
+          item.name.toLowerCase().includes(value.toLowerCase()),
+        );
+        setSuggestions(filtered);
+      }
     }
   };
 
-  const searchHandler = async (event) => {
-    event.preventDefault();
+  const handleDropdownToggle = () => {
+    if (showSuggestions) {
+      setShowSuggestions(false);
+    } else {
+      setSuggestions(allCoin);
+      setShowSuggestions(true);
+    }
+  };
 
-    const coins = await allCoin.filter((item) => {
+  const handleInputBlur = () => {
+    setTimeout(() => setShowSuggestions(false), 150);
+  };
+
+  const selectSuggestion = (coinName) => {
+    setInput(coinName);
+    setShowSuggestions(false);
+  };
+
+  const searchHandler = (event) => {
+    event.preventDefault();
+    const coins = allCoin.filter((item) => {
       return item.name.toLowerCase().includes(input.toLowerCase());
     });
-
     setDisplayCoin(coins);
+    setShowSuggestions(false);
   };
 
   useEffect(() => {
@@ -40,20 +68,42 @@ const Home = () => {
           explore more about cryptos.
         </p>
         <form onSubmit={searchHandler}>
-          <input
-            onChange={inputHandler}
-            list="coinlist"
-            value={input}
-            type="text"
-            placeholder="Search Crypto..."
-            required
-          />
+          <div className="input-wrapper">
+            <input
+              onChange={inputHandler}
+              onBlur={handleInputBlur}
+              value={input}
+              type="text"
+              placeholder="Search Crypto..."
+              required
+            />
+            <button
+              type="button"
+              className="dropdown-toggle"
+              onClick={handleDropdownToggle}
+              title="Toggle dropdown"
+            >
+              ▼
+            </button>
+          </div>
 
-          <datalist id="coinlist">
-            {allCoin.map((item, index) => (
-              <option key={index} value={item.name}></option>
-            ))}
-          </datalist>
+          {showSuggestions && (
+            <div className="suggestions-dropdown">
+              {suggestions.length > 0 ? (
+                suggestions.map((item, index) => (
+                  <div
+                    key={index}
+                    className="suggestion-item"
+                    onClick={() => selectSuggestion(item.name)}
+                  >
+                    {item.name}
+                  </div>
+                ))
+              ) : (
+                <div className="suggestion-item">No results found</div>
+              )}
+            </div>
+          )}
 
           <button type="submit">Search</button>
         </form>
