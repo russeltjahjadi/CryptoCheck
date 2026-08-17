@@ -1,0 +1,17 @@
+.chart-container {
+  padding: 20px;
+  border-radius: 12px;
+  background: rgba(29, 21, 47, 0.5);
+  border: 1px solid #3c3c3c;
+  margin: 20px 0;
+}
+
+.chart-loading {
+  padding: 40px 20px;
+  text-align: center;
+  color: #ddd;
+  font-size: 16px;
+  border-radius: 12px;
+  background: rgba(29, 21, 47, 0.5);
+  border: 1px solid #3c3c3c;
+}
