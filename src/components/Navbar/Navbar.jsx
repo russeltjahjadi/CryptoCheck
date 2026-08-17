@@ -35,7 +35,12 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <Link to={"/"}>
-        <img src={logo} alt="" className="logo" />
+        <img
+          src={logo}
+          alt="CryptoCheck Logo"
+          className="logo"
+          style={{ width: "280px", height: "auto" }}
+        />
       </Link>
       {/* <ul>
         <Link to={"/"}>
