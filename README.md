@@ -1,21 +1,135 @@
-Reference: https://youtu.be/jZFaMEqEqEQ
-Currently at: 1:11:00
+# CryptoCheck
 
-TODO: maybe use Binance API for real-time data instead of mock data??
+A modern cryptocurrency tracking and marketplace application built with React. CryptoCheck allows users to explore and monitor cryptocurrency prices, view detailed coin information, and track 24-hour price changes in a beautiful, user-friendly interface.
 
-# React + Vite
+## Tutorial Reference
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project was developed following the tutorial: [React Crypto Tracker Tutorial](https://youtu.be/jZFaMEqEqEQ)
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- 🪙 **Browse Cryptocurrencies** - Explore a comprehensive list of cryptocurrencies with real-time pricing data
+- 🔍 **Smart Search** - Search and filter cryptocurrencies by name with an intuitive dropdown interface
+- 📈 **Price Charts** - View historical price data with interactive line charts
+- 💹 **Market Data** - Display current price, 24-hour change percentage, and market cap
+- 🎨 **Beautiful UI** - Modern dark-themed interface with smooth animations
+- 📱 **Responsive Design** - Fully responsive layout that works on all devices
+- 💱 **Multi-Currency Support** - Toggle between different currencies
 
-## React Compiler
+## Technologies Used
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Frontend Framework**: React 18
+- **Build Tool**: Vite
+- **Routing**: React Router
+- **State Management**: React Context API
+- **Charts**: React Google Charts
+- **Styling**: CSS3 (with Flexbox & Grid)
+- **Font**: Google Fonts (Outfit)
+- **ESLint**: Code quality and consistency
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Prerequisites
+
+- Node.js (v14 or higher)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+
+```bash
+git clone <repository-url>
+cd CryptoCheck
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Start the development server:
+
+```bash
+npm run dev
+```
+
+4. Open your browser and navigate to `http://localhost:5173`
+
+### Build for Production
+
+```bash
+npm run build
+```
+
+## Project Structure
+
+```
+src/
+├── components/
+│   ├── Footer/
+│   │   ├── Footer.jsx
+│   │   └── Footer.css
+│   ├── LineChart/
+│   │   └── LineChart.jsx
+│   └── Navbar/
+│       ├── Navbar.jsx
+│       └── Navbar.css
+├── pages/
+│   ├── Home/
+│   │   ├── Home.jsx
+│   │   └── Home.css
+│   └── Coin/
+│       ├── Coin.jsx
+│       └── Coin.css
+├── context/
+│   └── CoinContext.jsx
+├── App.jsx
+├── index.css
+└── main.jsx
+```
+
+## Key Features Explained
+
+### Home Page
+
+- Displays top 10 cryptocurrencies by market cap
+- Features a powerful search bar with dropdown suggestions
+- Shows price, 24-hour change, and market cap for each coin
+- Click any coin to view detailed information
+
+### Coin Details Page
+
+- Displays comprehensive information about a selected cryptocurrency
+- Shows historical price data with an interactive chart
+- Currency conversion support
+- Detailed market statistics
+
+### Search Functionality
+
+- Click the dropdown icon to view all available cryptocurrencies
+- Type to filter cryptocurrencies by name
+- Select from suggestions to populate the search field
+- Submit to filter the main coin list
+
+## Future Enhancements
+
+- [ ] Integrate Binance API for real-time data instead of mock data
+- [ ] Add watchlist/favorites feature
+- [ ] Implement user authentication
+- [ ] Add price alerts and notifications
+- [ ] Support for more currency pairs
+- [ ] Advanced charting with multiple indicators
+
+## Contributing
+
+Feel free to fork this project and submit pull requests for any improvements!
+
+## License
+
+This project is open source and available under the MIT License.
+
+---
+
+**Built with ❤️ by Russel Tjahjadi**
